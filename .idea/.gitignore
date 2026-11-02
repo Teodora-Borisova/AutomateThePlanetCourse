@@ -8,3 +8,17 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+Plaintext
+# Maven
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Operating System Files
+.DS_Store
+Thumbs.db
