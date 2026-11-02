@@ -9,7 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>Block1MavenTest</module>
+        <module>Block1-MavenTest</module>
+        <module>Block2-PageObjects</module>
+        <module>Block3-JUnit5LifeCycle</module>
     </modules>
 
     <properties>
