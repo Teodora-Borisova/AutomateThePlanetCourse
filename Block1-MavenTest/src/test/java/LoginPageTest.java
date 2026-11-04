@@ -1,15 +1,10 @@
-import org.jspecify.annotations.Nullable;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Assertions;
 
-
-import java.util.List;
-import java.util.Set;
 
 public class LoginPageTest {
 
