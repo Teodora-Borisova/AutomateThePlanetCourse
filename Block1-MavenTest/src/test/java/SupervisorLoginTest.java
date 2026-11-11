@@ -39,7 +39,7 @@ public class SupervisorLoginTest {
                 By.xpath("//div[@data-testid='cs-user-menu']//span[contains(@class,'MuiChip-label')]")
         ));
 
-        Assertions.assertTrue(supervisorBadge.isDisplayed(), "Ролята SUPERVISOR не се показва в менюто!");
+        Assertions.assertTrue(supervisorBadge.isDisplayed(), "You are logged with the wrong role. SUPERVISOR is not your current role!");
 
         driver.quit();
     }
