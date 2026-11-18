@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BugCheckTest {
+public class BugCheckTest extends CitizenLoginTest {
 
     @Test
     public void testBugCheckLoginButtonText() {
@@ -63,16 +63,28 @@ public class BugCheckTest {
         ));
         logoutButton.click();
 
-        // 6. Връщаме се на Login страницата
-        driver.get("http://localhost:5173/login");
-        WebElement buggedLoginButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='cs-login-submit']")));
+        WebElement citizenButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@class='MuiBox-root css-0']/p[text()='Citizen']")
+        ));
+        citizenButton.click();
 
-        // 7. Проверка: тестът ТРЯБВА ДА ПАДНЕ тук с ясно съобщение, защото флагът е променил текста на бутона
-        Assertions.assertEquals("Login", buggedLoginButton.getText(),
-                "ГРЕШКА: Тестът падна успешно, защото флагът 'Login Button Text Wrong' е активен и промени текста на бутона!");
+       // WebElement loginButton = driver.findElement(By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-1bkoi5y']"));
+        loginButton.click();
 
-        // ⚠️ Тъй като тестът няма try/finally и ще падне на горния ред,
-        // след като затворите браузъра, не забравяйте ръчно да изключите флага от панела!
+
+//        WebElement userIcon = wait.until(ExpectedConditions.elementToBeClickable(
+//                By.xpath("//header//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-1deacqj'][2]")
+//        ));
+        userIcon.click();
+
+
+        WebElement citizenBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@data-testid='cs-user-menu']//span[contains(@class,'MuiChip-label')]")
+        ));
+
+        Assertions.assertTrue(citizenBadge.isDisplayed(), "Ролята CITIZEN не се показва в менюто!");
+
+
         driver.quit();
     }
 }

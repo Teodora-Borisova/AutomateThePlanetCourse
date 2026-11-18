@@ -36,11 +36,11 @@ public class AdministratorTest {
         userIcon.click();
 
 
-        WebElement supervisorBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement adminBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//div[@data-testid='cs-user-menu']//span[contains(@class,'MuiChip-label')]")
         ));
 
-        Assertions.assertTrue(supervisorBadge.isDisplayed(), "Ролята ADMINISTRATOR не се показва в менюто!");
+        Assertions.assertTrue(adminBadge.isDisplayed(), "Ролята ADMINISTRATOR не се показва в менюто!");
 
         driver.quit();
     }

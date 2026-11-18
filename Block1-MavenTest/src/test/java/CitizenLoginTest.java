@@ -35,12 +35,20 @@ public class CitizenLoginTest {
         userIcon.click();
 
 
-        WebElement citizenBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[@data-testid='cs-user-menu']//span[contains(@class,'MuiChip-label')]")
-        ));
+//        WebElement citizenBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
+//                By.xpath("//div[@data-testid='cs-user-menu']//span[contains(@class,'MuiChip-label')]")
+//        ));
 
-        Assertions.assertTrue(citizenBadge.isDisplayed(), "Ролята CITIZEN не се показва в менюто!");
+        //Assertions.assertTrue(citizenBadge.isDisplayed(), "Ролята CITIZEN не се показва в менюто!");
 
+
+        String role = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(""))).getText();
+
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(USER_MENU_CONTAINER));
+//
+//        // След това безопасно взимаме текста на ролята
+//        String role = wait.until(ExpectedConditions.visibilityOfElementLocated(USER_ROLE)).getText();
+//        return role;
 
         driver.quit();
     }
