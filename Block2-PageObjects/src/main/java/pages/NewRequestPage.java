@@ -19,7 +19,7 @@ public class NewRequestPage {
     private final By REQUEST_TITLE_FIELD = By.xpath("//*[@data-testid='cs-new-request-title']//input");
     private final By DESCRIPTION_FIELD = By.xpath("//textarea[@name='description']");
     private final By CATEGORY = By.xpath("//*[@data-testid='cs-new-request-category']");
-    private final By HIGH_PRIORITY_BUTTON = By.xpath("//*[@data-testid='cs-new-request-priority']//label[.//span[text()='High']]");
+    private final By HIGH_PRIORITY_BUTTON = By.xpath("//input[@name='priority' and @value='HIGH']/ancestor::label[1]");
     private final By NEXT_BUTTON = By.xpath("//button[@data-testid='cs-new-request-wizard-next']");
     private final By STREET_ADDRESS_FIELD = By.xpath("//*[@data-testid='cs-new-request-street-address']//input[@aria-invalid='false']");
     private final By CITY_FIELD = By.xpath("//input[@name='city']");

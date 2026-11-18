@@ -35,11 +35,11 @@ public class FieldAgentTest {
             userIcon.click();
 
 
-            WebElement supervisorBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
+            WebElement fieldAgendBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//div[@data-testid='cs-user-menu']//span[contains(@class,'MuiChip-label')]")
             ));
 
-            Assertions.assertTrue(supervisorBadge.isDisplayed(), "Ролята FILEDAGENT не се показва в менюто!");
+            Assertions.assertTrue(fieldAgendBadge.isDisplayed(), "Ролята FILEDAGENT не се показва в менюто!");
 
             driver.quit();
         }

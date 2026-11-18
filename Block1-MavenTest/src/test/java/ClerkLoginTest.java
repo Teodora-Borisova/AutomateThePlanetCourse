@@ -35,16 +35,12 @@ public class ClerkLoginTest {
         userIcon.click();
 
 
-        WebElement citizenBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[@data-testid='cs-user-menu']//span[contains(@class,'MuiChip-label')]")
+        WebElement clerkBadge = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//ul[@role='menu']//span[contains(@class, 'MuiChip-label') and (text()='CLERK' or text()='Clerk')]")
         ));
 
-        Assertions.assertTrue(citizenBadge.isDisplayed(), "Ролята CLERK не се показва в менюто!");
-
+        Assertions.assertTrue(clerkBadge.isDisplayed(), "Ролята CLERK не се показва в менюто!");
 
         driver.quit();
     }
-
-
-
 }
